@@ -1,8 +1,10 @@
-import { Facebook, Instagram, MailOutline, Payment, Phone, Pinterest, Room, Twitter } from "@material-ui/icons";
+import { Facebook, Instagram, MailOutline, Phone, Pinterest, Room, Twitter } from "@material-ui/icons";
 import styled from "styled-components"
+import { mobile } from "../responsive";
 
 const Container = styled.div`
     display: flex;
+    ${mobile({ flexDirection: "column" })}
 `;
 const Left = styled.div`
     flex:1;
@@ -33,6 +35,7 @@ const SocialIcon = styled.h1`
 const Center = styled.div`
     flex: 1;
     padding: 20px;
+    ${mobile({ display: "none" })}
 `;
 
 const Title = styled.h3`
@@ -53,6 +56,7 @@ const ListItem = styled.li`
 const Right = styled.div`
     flex: 1;
     padding: 20px;
+    ${mobile({ backgroundColor: "#fff8f8" })}
 `;
 const ContactItem = styled.div`
     margin-bottom: 20px;
@@ -60,9 +64,6 @@ const ContactItem = styled.div`
     align-items: center;
 `;
 
-// const Payment = styled.img`
-//     width: 50%;
-// `;
 
 const Footer = () => {
     return (
@@ -105,15 +106,12 @@ const Footer = () => {
             </Center>
             <Right>
                 <Title>Contact</Title>
-                <ContactItem> <Room style={{marginRight:"10px"}} /> 845 Panipat , Haryana 132103</ContactItem>
-                <ContactItem> <Phone style={{marginRight:"10px"}}/>
+                <ContactItem> <Room style={{ marginRight: "10px" }} /> 845 Panipat , Haryana 132103</ContactItem>
+                <ContactItem> <Phone style={{ marginRight: "10px" }} />
                     +91 7015067376
                     +91 8146752917
                 </ContactItem>
-                <ContactItem> <MailOutline style={{marginRight:"10px"}}/> nikhilrai929@gmail.com</ContactItem>
-                <ContactItem>
-                    <Payment src="https://i.ibb.co/s3HQ0xG/paypal-text-payment.png"/> 
-                </ContactItem>
+                <ContactItem> <MailOutline style={{ marginRight: "10px" }} /> nikhilrai929@gmail.com</ContactItem>
             </Right>
         </Container>
     )
